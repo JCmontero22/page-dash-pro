@@ -90,7 +90,7 @@ p{
     color: var(--primary-color);
 }
 
-/* --- Barra de Navegación --- */
+/***************  BARRA DE NAVEGACIÓN ***************/
 .navbar {
     background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
