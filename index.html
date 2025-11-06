@@ -87,7 +87,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <img src="assets/img/task_01k8rq0bkden18acwt127ay5b0_1761766129_img_1.webp" class="img-fluid rounded-3 shadow"
+                        <img src="assets/img/logo.webp" class="img-fluid rounded-3 shadow"
                             alt="Equipo de la empresa" />
                     </div>
                     <div class="col-lg-6 p-5" data-aos="fade-left">
@@ -121,33 +121,12 @@
                 <h2 class="section-title text-center">
                     Productos Destacados
                 </h2>
-                <div class="row g-4">
+                <div class="row g-4" id="productos-destacados">
                     <!-- Producto 1 -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                        <div class="card product-card h-100">
-                            <img src="https://placehold.co/400x300/94d2bd/005f73?text=Multi-Usos" class="card-img-top"
-                                alt="Producto Multi-usos" />
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Desengrasante Multiusos
-                                </h5>
-                                <p class="card-text">
-                                    El limpiador desengrasante está
-                                    formulado para una limpieza profunda y
-                                    eficiente de superficies con acumulación
-                                    de grasa.
-                                </p>
-                                <div class="product-rating mb-2">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <p class="fw-bold fs-5">$12.500</p>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <!-- Producto 2 -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                   <!--  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="card product-card h-100">
                             <img src="https://placehold.co/400x300/0a9396/ffffff?text=Desengrasante"
                                 class="card-img-top" alt="Desengrasante Industrial" />
@@ -168,9 +147,9 @@
                             </div>
                         </div>
                     </div>
-
+ -->
                     <!-- Producto 3 -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="card product-card h-100">
                             <img src="https://placehold.co/400x300/005f73/ffffff?text=Limpiavidrios"
                                 class="card-img-top" alt="Limpiavidrios" />
@@ -191,7 +170,7 @@
                                 <p class="fw-bold fs-5">$9.800</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="text-center mt-5">
                     <a href="catalogo.html" class="btn btn-custom">Ver Catálogo Completo</a>
@@ -319,39 +298,13 @@
     <!-- JS de AOS (Animate on Scroll) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script src="assets/js/app.js"></script>
+
     <!-- JavaScript Personalizado -->
     <script>
         $( document ).ready( function () {
             // Inicializar AOS (Animate on Scroll)
-            AOS.init( {
-                duration: 1000,
-                once: true,
-            } );
-
-            // Efecto de sombra en la barra de navegación al hacer scroll
-            $( window ).scroll( function () {
-                if ( $( this ).scrollTop() > 50 ) {
-                    $( ".navbar" ).addClass( "shadow-sm" );
-                } else {
-                    $( ".navbar" ).removeClass( "shadow-sm" );
-                }
-            } );
-
-            // Desplazamiento suave para los enlaces de navegación
-            $( ".nav-link" ).on( "click", function ( event ) {
-                if ( this.hash !== "" ) {
-                    // Prevenir el comportamiento de anclaje por defecto
-                    event.preventDefault();
-                    var hash = this.hash;
-                    // Animar el desplazamiento
-                    $( "html, body" ).animate(
-                        {
-                            scrollTop: $( hash ).offset().top - 70, // Ajustar por la barra de navegación fija
-                        },
-                        800,
-                    );
-                }
-            } );
+           
         } );
     </script>
 </body>
