@@ -60,6 +60,11 @@ p{
     line-height: 1.4;
 }
 
+li{
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
 img{
     max-width: 100%;
     height: auto;
@@ -103,7 +108,7 @@ img{
 /* --- Botones de Contacto Flotantes --- */
 .floating-contact {
     position: fixed;
-    bottom: 20px;
+    bottom: 45px;
     right: 20px;
     z-index: 1000;
     display: flex;
@@ -245,6 +250,30 @@ section {
     box-shadow: 0 10px 30px rgba(10, 147, 150, 0.4);
 }
 
+/* --- Nuevas Secciones B2B --- */
+.service-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+}
+.service-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+}
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 /* --- Sección Cómo Hacer Pedidos --- */
 .step-icon {
     font-size: 3rem;
@@ -284,6 +313,39 @@ footer a:hover {
     margin: 0 0.5rem;
 }
 
+.copy {
+    font-size: 1.2rem;
+    height: 8vh;
+}
+
+/* --- Banner Fijo para Negocios --- */
+.sticky-banner {
+    margin-top: 5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 1010; /* Debe estar por encima del contenido, pero debajo de los botones flotantes */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.sticky-banner p {
+    margin: 0;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+.sticky-banner .btn {
+    font-size: 1rem;
+    padding: 0.25rem 0.75rem;
+    flex-shrink: 0; /* Evita que el botón se encoja */
+    color: var(--primary-color);
+}
 
 
 
@@ -442,4 +504,63 @@ footer {
         font-size: 3rem;
         text-shadow: 2px 2px 5px black;
     }
+
+    h5{
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    p{
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    li{
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .sticky-banner {
+        justify-content: space-between;
+        padding: 0.75rem 2rem;
+    }
+    .sticky-banner p {
+        font-size: 1rem;
+        margin-right: 0;
+        text-align: left;
+    }
+    .sticky-banner .btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .floating-contact {
+        bottom: 70px;
+    }
+
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .sticky-banner p {
+        margin: 0;
+        font-size: 1.1rem;
+        margin-right: 1rem;
+    }
+    .sticky-banner .btn {
+        font-size: 1rem;
+        padding: 0.25rem 0.75rem;
+        flex-shrink: 0; /* Evita que el botón se encoja */
+        color: var(--primary-color);
+    }
+
+    .copy {
+        height: 12vh;
+    }
+
+    .copy p{
+        font-size: 1.2rem;
+    }
 }
+

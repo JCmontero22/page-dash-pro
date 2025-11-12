@@ -232,6 +232,37 @@
             </div>
         </section>
 
+        <!-- Sección Servicios Corporativos (B2B) -->
+        <section id="servicios-b2b">
+            <div class="container">
+                <h2 class="section-title text-center">Soluciones para tu Empresa</h2>
+                <div class="row g-4">
+                    <!-- Cotizaciones -->
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="card h-100 p-4 text-center service-card">
+                            <div class="service-icon mb-3"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <h4 class="fw-bold">Cotiza con Nosotros</h4>
+                            <p class="text-muted">¿Necesitas productos de aseo al por mayor para tu empresa, restaurante u oficina? Ofrecemos precios especiales por volumen. Contáctanos para una cotización personalizada.</p>
+                            <!-- MODIFICADO: Enlace directo a WhatsApp con mensaje -->
+                            <a href="https://wa.me/573106803450?text=%C2%A1Hola!%20Estoy%20interesado%20en%20cotizar%20productos%20al%20por%20mayor%20para%20mi%20empresa." target="_blank" class="btn btn-outline-primary mt-auto">Solicitar Cotización</a>
+                        </div>
+                    </div>
+                    <!-- Maquila -->
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="card h-100 p-4 text-center service-card">
+                            <div class="service-icon mb-3"><i class="fas fa-industry"></i></div>
+                            <h4 class="fw-bold">Servicio de Maquila</h4>
+                            <p class="text-muted">¿Tienes una marca y buscas un fabricante de confianza? Ofrecemos nuestro servicio de maquila para desarrollar y producir tus propias líneas de productos de limpieza.</p>
+                            <!-- MODIFICADO: Botón para abrir el modal -->
+                            <button type="button" class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#maquilaModal">
+                                Más Información
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sección Anuncios Especiales -->
         <section id="anuncios">
             <div class="container text-center" data-aos="fade-in">
@@ -243,6 +274,12 @@
             </div>
         </section>
     </main>
+
+     <!-- Banner Fijo para Negocios -->
+    <div class="sticky-banner">
+        <p class="mb-0"><strong>¿Tienes un negocio?</strong> Surte tu tienda con nuestros productos, contacta con nosotros.</p>
+        <a href="catalogo.html" class="btn btn-light btn-sm rounded-pill">Ver Catálogo</a>
+    </div>
 
     <!-- Pie de Página (Footer) -->
     <footer id="contacto">
@@ -278,9 +315,9 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center border-top border-secondary pt-3 mt-3">
+            <div class="text-center border-top border-secondary pt-3 mt-3 copy">
                 <p>
-                    &copy; 2024 J&M DevMente. Todos los derechos reservados.
+                    &copy; 2025 J&M DevMente. Todos los derechos reservados.
                     Diseñado con <i class="fas fa-heart text-danger"></i>.
                 </p>
             </div>
@@ -288,6 +325,46 @@
         <!-- Aquí iría el código PHP para procesar un formulario de contacto si se agregara uno. -->
         <!-- Ejemplo: <form action="procesar_contacto.php" method="post"> ... </form> -->
     </footer>
+
+   
+
+
+
+    <!--*************** MODALES ***************-->
+
+    <!-- NUEVO: Modal de Servicio de Maquila -->
+    <div class="modal fade" id="maquilaModal" tabindex="-1" aria-labelledby="maquilaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="maquilaModalLabel"><i class="fas fa-industry me-2"></i> Nuestro Servicio de Maquila</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="texto-justificado">Convierta su marca en una realidad. Ofrecemos un servicio integral de maquila para la fabricación de productos de limpieza con su propia etiqueta.</p>
+                    <p class="texto-justificado">Entendemos que cada marca es única. Por eso, nuestro equipo de expertos trabaja de la mano con usted en cada etapa del proceso, desde la formulación hasta el envasado final.</p>
+                    
+                    <h5 class="fw-bold mt-4">¿Qué incluye nuestro servicio?</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Desarrollo de Fórmulas:</strong> Creamos fórmulas personalizadas o adaptamos las nuestras a sus necesidades.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Producción y Envasado:</strong> Contamos con líneas de producción modernas para garantizar la calidad y eficiencia.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Asesoría en Normatividad:</strong> Le guiamos para asegurar que sus productos cumplan con todas las regulaciones vigentes.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Diseño de Etiquetado:</strong> Colaboramos con usted para crear una imagen de producto atractiva y profesional.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Control de Calidad Estricto:</strong> Cada lote es rigurosamente inspeccionado para garantizar la consistencia.</li>
+                    </ul>
+                    <p class="mt-4"><strong>Deje la fabricación en manos expertas y concéntrese en hacer crecer su negocio.</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <!-- Botón de contacto específico para maquila -->
+                    <a href="https://wa.me/573106803450?text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20maquila." target="_blank" class="btn btn-primary" style="background-color: var(--primary-color); border-color: var(--primary-color);">
+                        Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- JS de Bootstrap 5.3.2 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
