@@ -57,6 +57,11 @@ function init() {
 
     $(document).on("click",".remove-from-cart-btn",eliminarProductoCarrito);
 
+    $("#categoryFilter").on("change", function () {
+        const categoriaSeleccionada = $(this).val();
+        listadoProductos(categoriaSeleccionada);
+    });
+
 }
 
 
