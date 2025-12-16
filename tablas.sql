@@ -1,4 +1,4 @@
-CREATE TABLE dash_pro.categorias (
+CREATE TABLE dash_pro.categorias_dash (
 	id_categoria INT auto_increment NOT NULL,
 	nombre_categoria varchar(100) NULL,
 	estado_categoria CHAR(1) DEFAULT '1' NULL,
@@ -19,7 +19,7 @@ CREATE TABLE dash_pro.productos_dash (
 	destacados_producto CHAR(1) DEFAULT '0' NULL,
 	estado_producto CHAR(1) DEFAULT '1' NULL,
 	CONSTRAINT productos_dash_pk PRIMARY KEY (id_producto),
-	CONSTRAINT productos_dash_categorias_FK FOREIGN KEY (id_categoria) REFERENCES dash_pro.categorias(id_categoria)
+	CONSTRAINT productos_dash_categorias_FK FOREIGN KEY (id_categoria) REFERENCES dash_pro.categorias_dash(id_categoria)
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
@@ -105,7 +105,9 @@ INSERT INTO dash_pro.productos_dash (nombre_producto,descripcion_corta_producto,
 
 
 
-
+INSERT INTO dash_pro.presentacion_prodcuto_dash (id_producto,tamanio_presentacion_prodcuto,precio_venta_presentacion_producto,estado_presentacion_producto) VALUES
+	 (2,'2 Litro',20000,'1'),
+	 (2,'3.8 Litros',27000,'1');
 
 
 
