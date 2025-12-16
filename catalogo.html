@@ -1,714 +1,217 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Catálogo de Productos - DASH PRO</title>
 
-        <!-- CSS de Bootstrap 5.3.2 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Productos - DASH PRO</title>
 
-        <!-- Font Awesome para iconos -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- CSS de Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-        <!-- Google Fonts (Poppins) -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-        <!-- Librería AOS (Animate on Scroll) -->
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-        <!-- CSS Personalizado -->
-        <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Librería AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-        
-    </head>
-    <body>
-        <!-- Barra de Navegación -->
-        <nav class="navbar navbar-expand-lg sticky-top">
-            <div class="container">
-                <a class="navbar-brand" href="index.html" ><i class="fas fa-soap"></i> DASH PRO</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="catalogo.html" >Catálogo</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-        <!-- Encabezado de Página -->
-        <header class="page-header">
-            <div class="container" data-aos="fade-in">
-                <h1 class="">Nuestro Catálogo de Productos</h1>
-                <p class="">
-                    <strong> Calidad y eficiencia para cada necesidad de limpieza.</strong>
-                </p>
-            </div>
-        </header>
 
-        <!-- Sección de Cuadrícula de Productos -->
-        <section id="catalogo">
-            <div class="container">
-                <!-- Barra de Filtros -->
-                <div
-                    class="row filter-bar align-items-center"
-                    data-aos="fade-up"
-                >
-                    <div class="col-md-6">
-                        <input
-                            type="text"
-                            id="searchInput"
-                            class="form-control"
-                            placeholder="Buscar producto por nombre..."
-                        />
-                    </div>
-                    <div class="col-md-6 mt-3 mt-md-0">
-                        <select id="categoryFilter" class="form-select">
-                            <option value="all">Todas las categorías</option>
-                            <option value="hogar">Hogar</option>
-                            <option value="industrial">Industrial</option>
-                            <option value="vehicular">Vehicular</option>
-                        </select>
-                    </div>
-                </div>
+</head>
 
-                <!-- Cuadrícula de Productos -->
-                <div class="row g-4" id="product-list">
-                    <!-- Los productos se inyectarán aquí con JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Botón de Carrito Flotante -->
-        <div class="floating-cart">
-            <div
-                class="cart-btn"
-                data-bs-toggle="modal"
-                data-bs-target="#cartModal"
-            >
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-badge d-none">0</span>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-soap"></i> DASH PRO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="catalogo.html">Catálogo</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <!-- Modal del Carrito -->
-        <div class="modal fade" id="cartModal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            <i class="fas fa-list-alt me-2"></i>Mi Pedido
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                        ></button>
+    <!-- Encabezado de Página -->
+    <header class="page-header">
+        <div class="container" data-aos="fade-in">
+            <h1 class="">Nuestro Catálogo de Productos</h1>
+            <p class="">
+                <strong> Calidad y eficiencia para cada necesidad de limpieza.</strong>
+            </p>
+        </div>
+    </header>
+
+    <!-- Sección de Cuadrícula de Productos -->
+    <section id="catalogo">
+        <div class="container">
+            <!-- Barra de Filtros -->
+            <div class="row filter-bar align-items-center" data-aos="fade-up">
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control"
+                        placeholder="Buscar producto por nombre..." />
+                </div>
+                <div class="col-md-6 mt-3 mt-md-0">
+                    <select id="categoryFilter" class="form-select">
+                        <option value="0">Todas las Categorías</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Cuadrícula de Productos -->
+            <div class="row g-4" id="product-list">
+                <!-- Los productos se inyectarán aquí con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de Carrito Flotante -->
+    <div class="floating-cart">
+        <div class="cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge d-none">0</span>
+        </div>
+    </div>
+
+    <!-- Modal del Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-list-alt me-2"></i>Mi Pedido
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items-container">
+                        <p>Aún no has añadido productos a tu pedido.</p>
                     </div>
-                    <div class="modal-body">
-                        <div id="cart-items-container">
-                            <p>Aún no has añadido productos a tu pedido.</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                        >
-                            Seguir Comprando
-                        </button>
-                        <button
-                            type="button"
-                            class="btn btn-success"
-                            id="send-order-btn"
-                        >
-                            <i class="fab fa-whatsapp me-2"></i>Enviar Pedido
-                        </button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Seguir Comprando
+                    </button>
+                    <button type="button" class="btn btn-success" id="send-order-btn" onclick="enviarPedido()">
+                        <i class="fab fa-whatsapp me-2"></i>Enviar Pedido
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal de Detalles del Producto -->
-        <div class="modal fade" id="productDetailModal" tabindex="-1">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="detailModalTitle">
-                            Detalles del Producto
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                        ></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img
-                                    src=""
-                                    id="detailModalImage"
-                                    class="img-fluid w-100"
-                                    alt="Imagen del producto"
-                                />
+    <!-- Modal de Detalles del Producto -->
+    <div class="modal fade" id="productDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalTitle">
+                        Detalles del Producto
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="" id="detailModalImage" class="img-fluid w-100" alt="Imagen del producto" />
+                        </div>
+                        <div class="col-md-7">
+                            <h2 id="detailModalName"></h2>
+                            <p id="detailModalDescription"></p>
+                            <div class="d-flex align-items-center mb-3">
+                                <label for="detailModalPresentation" class="form-label me-2 mb-0">Tamaño:</label>
+                                <select class="form-select w-auto" id="detailModalPresentation"></select>
                             </div>
-                            <div class="col-md-7">
-                                <h2 id="detailModalName"></h2>
-                                <p id="detailModalDescription"></p>
-                                <div class="d-flex align-items-center mb-3">
-                                    <label
-                                        for="detailModalPresentation"
-                                        class="form-label me-2 mb-0"
-                                        >Tamaño:</label
-                                    >
-                                    <select
-                                        class="form-select w-auto"
-                                        id="detailModalPresentation"
-                                    ></select>
-                                </div>
-                                <h3 class="fw-bold" id="detailModalPrice"></h3>
-                                <div class="d-flex align-items-center mt-3">
-                                    <input
-                                        type="number"
-                                        class="form-control quantity-input me-2"
-                                        value="1"
-                                        min="1"
-                                    />
-                                    <button
-                                        class="btn btn-primary add-to-cart-from-modal"
-                                    >
-                                        <i class="fas fa-cart-plus me-2"></i
-                                        >Añadir al Pedido
-                                    </button>
-                                </div>
-                                <div class="mt-4 detail-section">
-                                    <h5>
-                                        <i class="fas fa-flask me-2"></i
-                                        >Componentes
-                                    </h5>
-                                    <p id="detailModalComponents"></p>
-                                </div>
+                            <h3 class="fw-bold" id="detailModalPrice"></h3>
+                            <div class="d-flex align-items-center mt-3">
+                                <input type="number" class="form-control quantity-input me-2" value="1" min="1"
+                                    id="detailModalQuantity" />
+                                <button class="btn btn-primary add-to-cart-from-modal"
+                                    onclick="agregarDesdeModalDescripcion()">
+                                    <i class="fas fa-cart-plus me-2"></i>Añadir al Pedido
+                                </button>
+                            </div>
+                            <div class="mt-4 detail-section">
+                                <h5>
+                                    <i class="fas fa-flask me-2"></i>Componentes
+                                </h5>
+                                <p id="detailModalComponents"></p>
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-12">
-                                <div class="detail-section">
-                                    <h5>
-                                        <i
-                                            class="fas fa-spray-can-sparkles me-2"
-                                        ></i
-                                        >Usos Recomendados
-                                    </h5>
-                                    <p id="detailModalUses"></p>
-                                </div>
-                                <div class="detail-section">
-                                    <h5>
-                                        <i class="fas fa-certificate me-2"></i
-                                        >Certificaciones
-                                    </h5>
-                                    <p id="detailModalCerts"></p>
-                                </div>
-                                <div class="detail-section">
-                                    <h5>
-                                        <i class="fas fa-lightbulb me-2"></i
-                                        >Recomendaciones
-                                    </h5>
-                                    <p id="detailModalRecommendations"></p>
-                                </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="detail-section">
+                                <h5>
+                                    <i class="fas fa-spray-can-sparkles me-2"></i>Usos Recomendados
+                                </h5>
+                                <p id="detailModalUses"></p>
+                            </div>
+                            <div class="detail-section">
+                                <h5>
+                                    <i class="fas fa-certificate me-2"></i>Certificaciones
+                                </h5>
+                                <p id="detailModalCerts"></p>
+                            </div>
+                            <div class="detail-section">
+                                <h5>
+                                    <i class="fas fa-lightbulb me-2"></i>Recomendaciones
+                                </h5>
+                                <p id="detailModalRecommendations"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Notificación Toast -->
-        <div class="toast-container position-fixed bottom-0 end-0 p-3">
-            <div
-                id="liveToast"
-                class="toast"
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-            >
-                <div class="toast-header bg-success text-white">
-                    <strong class="me-auto">¡Éxito!</strong>
-                    <button
-                        type="button"
-                        class="btn-close btn-close-white"
-                        data-bs-dismiss="toast"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div class="toast-body" id="toast-body-message"></div>
+    <!-- Notificación Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <strong class="me-auto">¡Éxito!</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
             </div>
+            <div class="toast-body" id="toast-body-message"></div>
         </div>
+    </div>
 
-        <!-- Pie de Página (Footer) -->
-        <footer>
-            <div class="container text-center py-3">
-                <p class="mb-0">
-                    &copy; 2024 DASH PRO. Todos los derechos reservados.
-                </p>
-            </div>
-        </footer>
+    <!-- Pie de Página (Footer) -->
+    <footer>
+        <div class="container text-center py-3">
+            <p class="mb-0">
+                &copy; 2024 DASH PRO. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
 
-        <!-- JS de Bootstrap 5.3.2 -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS de Bootstrap 5.3.2 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!-- jQuery 3.7.1 -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- jQuery 3.7.1 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-        <!-- JS de AOS (Animate on Scroll) -->
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- JS de AOS (Animate on Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        <script>
-            $(document).ready(function () {
-                AOS.init({ duration: 800, once: true });
+    <script src="assets/js/catalogo.js"></script>
 
-                const numeroWhatsApp = "573114915408";
+    
+</body>
 
-                // --- Datos de los productos con más detalles ---
-                const productos = [
-                    {
-                        id: 1,
-                        name: "Limpiador Multi-Usos Lavanda",
-                        category: "hogar",
-                        rating: 4.5,
-                        img: "https://placehold.co/400x300/94d2bd/005f73?text=Multi-Usos",
-                        description:
-                            "Nuestra fórmula multi-usos con aroma a lavanda desinfecta y limpia profundamente cualquier superficie lavable, dejando un brillo impecable y un aroma fresco y duradero.",
-                        components:
-                            "Agua, tensoactivos no iónicos, fragancia de lavanda, conservantes, colorante.",
-                        uses: "Ideal para pisos, azulejos, mesones de cocina, baños y muebles. No requiere enjuague.",
-                        certs: "Producto biodegradable. Certificado de no testeo en animales.",
-                        recommendations:
-                            "Para una limpieza más profunda en grasa difícil, combine con nuestro Desengrasante Industrial Potente.",
-                        presentations: [
-                            { size: "1 Litro", price: 12500 },
-                            { size: "1 Galón", price: 40000 },
-                            { size: "5 Litros", price: 55000 },
-                        ],
-                    },
-                    {
-                        id: 2,
-                        name: "Desengrasante Industrial Potente",
-                        category: "industrial",
-                        rating: 5,
-                        img: "https://placehold.co/400x300/0a9396/ffffff?text=Desengrasante",
-                        description:
-                            "Diseñado para las tareas más exigentes, este desengrasante corta la grasa y el aceite acumulado en motores, maquinaria pesada y cocinas industriales.",
-                        components:
-                            "Solventes de origen natural, tensoactivos aniónicos, agentes alcalinos, agua.",
-                        uses: "Maquinaria, motores, campanas extractoras, parrillas, pisos de talleres.",
-                        certs: "Cumple con la norma de seguridad industrial ISO 9001.",
-                        recommendations:
-                            "Usar siempre con guantes de protección. Ventilar bien el área durante su uso.",
-                        presentations: [
-                            { size: "1 Litro", price: 25000 },
-                            { size: "1 Galón", price: 85000 },
-                        ],
-                    },
-                    {
-                        id: 3,
-                        name: "Limpiavidrios Anti-Empañante",
-                        category: "hogar",
-                        rating: 4,
-                        img: "https://placehold.co/400x300/005f73/ffffff?text=Limpiavidrios",
-                        description:
-                            "Obtén cristales y espejos sin rayas y con una claridad excepcional. Su fórmula especial crea una capa protectora que previene el empañamiento.",
-                        components:
-                            "Alcohol isopropílico, surfactantes, agente anti-empañante, agua desionizada.",
-                        uses: "Ventanas, espejos, vitrinas, pantallas de vidrio y mesas.",
-                        certs: "Fórmula libre de amoníaco.",
-                        recommendations:
-                            "Aplicar con un paño de microfibra limpio y seco para mejores resultados. No aplicar bajo la luz solar directa.",
-                        presentations: [
-                            { size: "500 ml", price: 9800 },
-                            { size: "1 Litro", price: 17000 },
-                        ],
-                    },
-                    {
-                        id: 5,
-                        name: "Shampoo para Autos pH Neutro",
-                        category: "vehicular",
-                        rating: 4,
-                        img: "https://placehold.co/400x300/001219/ffffff?text=Shampoo+Auto",
-                        description:
-                            "Lava tu vehículo sin dañar la cera o el sellador. Nuestra fórmula con pH neutro crea una espuma densa que levanta la suciedad de forma segura.",
-                        components:
-                            "Tensoactivos suaves, polímeros lubricantes, abrillantadores ópticos, fragancia.",
-                        uses: "Lavado manual de carrocerías de automóviles, motos y botes.",
-                        certs: "Seguro para todo tipo de pinturas y acabados.",
-                        recommendations:
-                            "Para un acabado superior, seque el vehículo con una toalla de microfibra y aplique nuestra Cera Rápida para Autos.",
-                        presentations: [
-                            { size: "500 ml", price: 15500 },
-                            { size: "1 Galón", price: 50000 },
-                        ],
-                    },
-                    {
-                        id: 6,
-                        name: "Suavizante Floral para Ropa",
-                        category: "hogar",
-                        rating: 4.8,
-                        img: "https://placehold.co/400x300/fec5bb/005f73?text=Suavizante",
-                        description:
-                            "Deja tu ropa increíblemente suave y con un delicado perfume floral que dura por días. Facilita el planchado y reduce la estática.",
-                        components:
-                            "Agentes suavizantes catiónicos, perfume, conservantes, agua.",
-                        uses: "Añadir en el último ciclo de enjuague de la lavadora o para remojo manual.",
-                        certs: "Hipoalergénico, probado dermatológicamente.",
-                        recommendations:
-                            "No aplicar directamente sobre la ropa. Diluir en el agua del enjuague.",
-                        presentations: [
-                            { size: "1 Litro", price: 14000 },
-                            { size: "1 Galón", price: 45000 },
-                        ],
-                    },
-                    {
-                        id: 7,
-                        name: "Brillador de Acero Inoxidable",
-                        category: "industrial",
-                        rating: 4.9,
-                        img: "https://placehold.co/400x300/d8d8d8/000000?text=Acero+Inox",
-                        description:
-                            "Limpia, pule y protege superficies de acero inoxidable en un solo paso. Elimina huellas dactilares, manchas de agua y grasa, dejando un acabado brillante y sin vetas.",
-                        components:
-                            "Aceites minerales, solventes, propelentes, fragancia.",
-                        uses: "Electrodomésticos, ascensores, barandillas, equipos de cocina industrial.",
-                        certs: "Fórmula no abrasiva. Seguro para superficies en contacto con alimentos (con enjuague posterior).",
-                        recommendations:
-                            "Agitar bien antes de usar. Aplicar una pequeña cantidad sobre un paño limpio y frotar en la dirección del grano del metal.",
-                        presentations: [
-                            { size: "400 ml (Aerosol)", price: 22000 },
-                        ],
-                    },
-                    {
-                        id: 8,
-                        name: "Cera Rápida para Autos (Carnauba)",
-                        category: "vehicular",
-                        rating: 4.7,
-                        img: "https://placehold.co/400x300/e85d04/ffffff?text=Cera+Auto",
-                        description:
-                            "Consigue un brillo profundo y una protección duradera en minutos. Enriquecida con cera de carnauba natural para un acabado espectacular y repelencia al agua.",
-                        components:
-                            "Cera de carnauba, polímeros sintéticos, siliconas, agua.",
-                        uses: "Aplicar sobre la pintura limpia y seca del vehículo. Rociar y pulir con un paño de microfibra.",
-                        certs: "Protección UV para prevenir la decoloración de la pintura.",
-                        recommendations:
-                            "Para mejores resultados, lave previamente el auto con nuestro Shampoo pH Neutro.",
-                        presentations: [
-                            { size: "750 ml (Gatillo)", price: 28000 },
-                        ],
-                    },
-                    {
-                        id: 9,
-                        name: "Desinfectante de Ambientes Eucalipto",
-                        category: "hogar",
-                        rating: 4.6,
-                        img: "https://placehold.co/400x300/a7c957/005f73?text=Desinfectante",
-                        description:
-                            "Elimina el 99.9% de los gérmenes, virus y bacterias en el aire y superficies. Neutraliza malos olores con un refrescante aroma a eucalipto.",
-                        components:
-                            "Alcohol etílico, agentes desinfectantes, aceite esencial de eucalipto, propelentes.",
-                        uses: "Hogares, oficinas, baños, habitaciones de enfermos. Aplicar en el aire y sobre superficies no porosas.",
-                        certs: "Registro Sanitario INVIMA. Efectivo contra Staphylococcus aureus, E. coli.",
-                        recommendations:
-                            "No usar cerca de llamas o fuentes de calor. Evitar el contacto con los ojos.",
-                        presentations: [
-                            { size: "360 ml (Aerosol)", price: 16000 },
-                        ],
-                    },
-                    {
-                        id: 10,
-                        name: "Removedor de Sarro y Moho para Baños",
-                        category: "hogar",
-                        rating: 4.8,
-                        img: "https://placehold.co/400x300/caf0f8/005f73?text=Anti-Sarro",
-                        description:
-                            "Potente fórmula en gel que se adhiere a las superficies para disolver el sarro, los depósitos de jabón y el moho sin necesidad de fregar intensamente.",
-                        components:
-                            "Ácidos orgánicos, tensoactivos, agentes quelantes, espesantes.",
-                        uses: "Duchas, tinas, azulejos, juntas, grifería y mamparas de baño.",
-                        certs: "Fórmula segura para la mayoría de superficies de baño. No usar en mármol o piedra natural.",
-                        recommendations:
-                            "Dejar actuar por 5-10 minutos antes de enjuagar para una máxima efectividad. Usar en un área ventilada.",
-                        presentations: [
-                            { size: "750 ml (Gatillo)", price: 19500 },
-                        ],
-                    },
-                ];
-
-                const listaDeProductos = $("#product-list");
-                let carritoDeCompras = [];
-
-                function renderizarProductos(productosParaRenderizar) {
-                    listaDeProductos.empty();
-                    if (productosParaRenderizar.length === 0) {
-                        listaDeProductos.html(
-                            '<div class="col-12 text-center"><p class="lead">No se encontraron productos.</p></div>',
-                        );
-                        return;
-                    }
-                    productosParaRenderizar.forEach((producto) => {
-                        let presentationOptions = "";
-                        producto.presentations.forEach((p, index) => {
-                            presentationOptions += `<option value="${index}">${p.size}</option>`;
-                        });
-
-                        const productoHtml = `
-                        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-                            <div class="card product-card h-100">
-                                <img src="${producto.img}" class="card-img-top open-detail-modal" alt="${producto.name}" data-id="${producto.id}">
-                                <div class="card-body">
-                                    <h5 class="card-title open-detail-modal" data-id="${producto.id}">${producto.name}</h5>
-                                    <div class="my-3">
-                                        <select class="form-select form-select-sm presentation-select" data-id="${producto.id}">${presentationOptions}</select>
-                                    </div>
-                                    <p class="fw-bold fs-4 product-price" data-id="${producto.id}">$${producto.presentations[0].price.toLocaleString("es-CO")}</p>
-                                    <div class="mt-auto d-flex justify-content-center align-items-center">
-                                        <input type="number" class="form-control quantity-input me-2" value="1" min="1">
-                                        <button class="btn btn-sm btn-primary add-to-cart-btn" data-id="${producto.id}">Añadir</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                        listaDeProductos.append(productoHtml);
-                    });
-                }
-
-                // --- Lógica de filtrado ---
-                $("#searchInput, #categoryFilter").on(
-                    "keyup change",
-                    function () {
-                        const valorBusqueda = $("#searchInput")
-                            .val()
-                            .toLowerCase();
-                        const valorCategoria = $("#categoryFilter").val();
-                        const productosFiltrados = productos.filter(
-                            (p) =>
-                                p.name.toLowerCase().includes(valorBusqueda) &&
-                                (valorCategoria === "all" ||
-                                    p.category === valorCategoria),
-                        );
-                        renderizarProductos(productosFiltrados);
-                    },
-                );
-
-                // --- Lógica de cambio de presentación y precio en la TARJETA ---
-                $(document).on("change", ".presentation-select", function () {
-                    const productoId = $(this).data("id");
-                    const selectedIndex = $(this).val();
-                    const producto = productos.find((p) => p.id === productoId);
-                    const nuevoPrecio =
-                        producto.presentations[selectedIndex].price;
-                    $(`.product-price[data-id=${productoId}]`).text(
-                        `$${nuevoPrecio.toLocaleString("es-CO")}`,
-                    );
-                });
-
-                // --- Lógica para abrir y poblar el MODAL de detalles ---
-                const detailModal = new bootstrap.Modal(
-                    document.getElementById("productDetailModal"),
-                );
-                $(document).on("click", ".open-detail-modal", function () {
-                    const productoId = $(this).data("id");
-                    const producto = productos.find((p) => p.id === productoId);
-
-                    $("#detailModalName").text(producto.name);
-                    $("#detailModalImage").attr("src", producto.img);
-                    $("#detailModalDescription").text(producto.description);
-                    $("#detailModalComponents").text(producto.components);
-                    $("#detailModalUses").text(producto.uses);
-                    $("#detailModalCerts").text(producto.certs);
-                    $("#detailModalRecommendations").text(
-                        producto.recommendations,
-                    );
-
-                    const presentationSelect = $("#detailModalPresentation");
-                    presentationSelect.empty();
-                    producto.presentations.forEach((p, index) => {
-                        presentationSelect.append(
-                            `<option value="${index}">${p.size}</option>`,
-                        );
-                    });
-
-                    $("#detailModalPrice").text(
-                        `$${producto.presentations[0].price.toLocaleString("es-CO")}`,
-                    );
-                    $(".add-to-cart-from-modal").data("id", producto.id); // Asignar ID al botón del modal
-
-                    detailModal.show();
-                });
-
-                // --- Lógica de cambio de presentación y precio en el MODAL ---
-                $("#detailModalPresentation").on("change", function () {
-                    const productoId = $(".add-to-cart-from-modal").data("id");
-                    const selectedIndex = $(this).val();
-                    const producto = productos.find((p) => p.id === productoId);
-                    const nuevoPrecio =
-                        producto.presentations[selectedIndex].price;
-                    $("#detailModalPrice").text(
-                        `$${nuevoPrecio.toLocaleString("es-CO")}`,
-                    );
-                });
-
-                // --- Lógica del Carrito de Compras ---
-                const notificacionToastElemento =
-                    document.getElementById("liveToast");
-                const toast = new bootstrap.Toast(notificacionToastElemento);
-
-                function anadirAlCarrito(
-                    productoId,
-                    cantidad,
-                    presentationIndex,
-                ) {
-                    const producto = productos.find((p) => p.id === productoId);
-                    const presentacion =
-                        producto.presentations[presentationIndex];
-                    const idUnico = `${producto.id}-${presentacion.size}`; // ID único por producto y tamaño
-
-                    const productoExistente = carritoDeCompras.find(
-                        (p) => p.uniqueId === idUnico,
-                    );
-
-                    if (productoExistente) {
-                        productoExistente.quantity += cantidad;
-                    } else {
-                        carritoDeCompras.push({
-                            uniqueId: idUnico,
-                            id: producto.id,
-                            name: producto.name,
-                            size: presentacion.size,
-                            price: presentacion.price,
-                            quantity: cantidad,
-                        });
-                    }
-
-                    $("#toast-body-message").text(
-                        `'${producto.name} (${presentacion.size})' x${cantidad} añadido.`,
-                    );
-                    toast.show();
-                    actualizarInterfazCarrito();
-                }
-
-                // Evento para añadir desde la TARJETA
-                $(document).on("click", ".add-to-cart-btn", function () {
-                    const productoId = $(this).data("id");
-                    const presentationIndex = $(this)
-                        .closest(".card-body")
-                        .find(".presentation-select")
-                        .val();
-                    const cantidad = parseInt(
-                        $(this).siblings(".quantity-input").val(),
-                    );
-                    if (isNaN(cantidad) || cantidad < 1) return;
-                    anadirAlCarrito(productoId, cantidad, presentationIndex);
-                    $(this).siblings(".quantity-input").val(1);
-                });
-
-                // Evento para añadir desde el MODAL
-                $(".add-to-cart-from-modal").on("click", function () {
-                    const productoId = $(this).data("id");
-                    const presentationIndex = $(
-                        "#detailModalPresentation",
-                    ).val();
-                    const cantidad = parseInt(
-                        $(this).siblings(".quantity-input").val(),
-                    );
-                    if (isNaN(cantidad) || cantidad < 1) return;
-                    anadirAlCarrito(productoId, cantidad, presentationIndex);
-                    $(this).siblings(".quantity-input").val(1);
-                    detailModal.hide();
-                });
-
-                function actualizarInterfazCarrito() {
-                    const insigniaCarrito = $(".cart-badge");
-                    const contenedorItemsCarrito = $("#cart-items-container");
-                    let totalItems = 0;
-
-                    if (carritoDeCompras.length === 0) {
-                        insigniaCarrito.addClass("d-none");
-                        contenedorItemsCarrito.html(
-                            "<p>Aún no has añadido productos a tu pedido.</p>",
-                        );
-                        $("#send-order-btn").prop("disabled", true);
-                        return;
-                    }
-
-                    contenedorItemsCarrito.html("");
-                    carritoDeCompras.forEach((item) => {
-                        totalItems += item.quantity;
-                        const itemHtml = `
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <div>
-                                <span class="fw-bold">${item.name}</span>
-                                <small class="d-block text-muted">${item.size}</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <input type="number" class="form-control form-control-sm cart-quantity-input me-2" value="${item.quantity}" min="1" data-unique-id="${item.uniqueId}" style="width: 60px;">
-                                <button class="btn btn-sm btn-outline-danger remove-from-cart-btn" data-unique-id="${item.uniqueId}">&times;</button>
-                            </div>
-                        </div>
-                    `;
-                        contenedorItemsCarrito.append(itemHtml);
-                    });
-
-                    insigniaCarrito.text(totalItems).removeClass("d-none");
-                    $("#send-order-btn").prop("disabled", false);
-                }
-
-                $(document).on("change", ".cart-quantity-input", function () {
-                    const uniqueId = $(this).data("unique-id");
-                    const nuevaCantidad = parseInt($(this).val());
-                    const itemEnCarrito = carritoDeCompras.find(
-                        (item) => item.uniqueId === uniqueId,
-                    );
-                    if (itemEnCarrito && nuevaCantidad > 0) {
-                        itemEnCarrito.quantity = nuevaCantidad;
-                    } else {
-                        carritoDeCompras = carritoDeCompras.filter(
-                            (item) => item.uniqueId !== uniqueId,
-                        );
-                    }
-                    actualizarInterfazCarrito();
-                });
-
-                $(document).on("click", ".remove-from-cart-btn", function () {
-                    const uniqueId = $(this).data("unique-id");
-                    carritoDeCompras = carritoDeCompras.filter(
-                        (item) => item.uniqueId !== uniqueId,
-                    );
-                    actualizarInterfazCarrito();
-                });
-
-                $("#send-order-btn").on("click", function () {
-                    if (carritoDeCompras.length === 0) return;
-                    let mensaje =
-                        "¡Hola! Quisiera hacer el siguiente pedido:\n\n";
-                    carritoDeCompras.forEach((item) => {
-                        mensaje += `- ${item.name} (${item.size}) - Cantidad: ${item.quantity}\n`;
-                    });
-                    mensaje += "\n¡Gracias!";
-
-                    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-                    window.open(urlWhatsApp, "_blank");
-                });
-
-                // Renderizado Inicial
-                renderizarProductos(productos);
-            });
-        </script>
-    </body>
 </html>

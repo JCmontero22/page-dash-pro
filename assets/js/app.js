@@ -6,6 +6,7 @@ function init(){
     scroll();
     desplazamientoEnlaces();
     conssultaProductosDestacados();
+    cargarCategorias();
 }
 
 function scroll() {
@@ -72,6 +73,23 @@ function conssultaProductosDestacados() {
         }
     });
                 
+}
+
+function cargarCategorias() {
+    $.ajax( {
+        url: './ajax/consultaCategorias.php',
+        method: 'GET',
+        success: function ( data ) {
+            data = JSON.parse( data );
+            console.log(data);
+            
+            data.forEach(element => {
+                $("#categorias-lista").append(`
+                    <li><a href="#${element.nombre_categoria}" class="nav-link">${element.nombre_categoria}</a></li>
+                `);
+            });
+        }
+    });
 }
 
 
