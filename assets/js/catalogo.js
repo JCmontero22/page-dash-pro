@@ -207,7 +207,6 @@ function agruparProductos(dataProductos) {
 }
 
 function abrirModalProducto(producto) {
-    console.log(producto);
     
     $("#detailModalName").text(producto.nombre_producto);
     $("#detailModalImage").attr("src", producto.img_producto);
@@ -222,7 +221,7 @@ function abrirModalProducto(producto) {
     /* $("#detailModalCerts").text(
         producto.certificaciones_detalle_producto ?? 'No disponible'
     ); */
-    $("#detailModalRecommendations").text(
+    $("#detailModalRecommendations").html(
         producto.recomendaciones_detalle_producto ?? 'No disponible'
     );
 
