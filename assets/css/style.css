@@ -563,5 +563,15 @@ footer {
     .copy p{
         font-size: 1.2rem;
     }
+
+    .floating-contact {
+        position: fixed;
+        bottom: 45px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
