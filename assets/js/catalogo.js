@@ -179,11 +179,16 @@ function agruparProductos(dataProductos) {
                 producto_id: id,
                 nombre_producto: item.nombre_producto,
                 descripcion_corta_producto: item.descripcion_corta_producto,
+                descripcion_completa_detalle_producto: item.descripcion_completa_detalle_producto,
                 img_producto: item.img_producto,
                 id_categoria: item.id_categoria,
                 destacados_producto: item.destacados_producto,
                 estado_producto: item.estado_producto,
-                presentaciones: []
+                presentaciones: [],
+                componentes_detalle_producto: item.componentes_detalle_producto,
+                recomendaciones_detalle_producto: item.recomendaciones_detalle_producto,
+                 uso_detalle_producto: item.uso_detalle_producto,
+                 certificaciones_detalle_producto: item.certificaciones_detalle_producto
             };
         }
 
@@ -202,20 +207,21 @@ function agruparProductos(dataProductos) {
 }
 
 function abrirModalProducto(producto) {
-
+    console.log(producto);
+    
     $("#detailModalName").text(producto.nombre_producto);
     $("#detailModalImage").attr("src", producto.img_producto);
-    $("#detailModalDescription").text(producto.descripcion_corta_producto);
+    $("#detailModalDescription").html(producto.descripcion_completa_detalle_producto ?? 'No disponible');
 
     $("#detailModalComponents").text(
         producto.componentes_detalle_producto ?? 'No disponible'
     );
-    $("#detailModalUses").text(
+    $("#detailModalUses").html(
         producto.uso_detalle_producto ?? 'No disponible'
     );
-    $("#detailModalCerts").text(
+    /* $("#detailModalCerts").text(
         producto.certificaciones_detalle_producto ?? 'No disponible'
-    );
+    ); */
     $("#detailModalRecommendations").text(
         producto.recomendaciones_detalle_producto ?? 'No disponible'
     );
