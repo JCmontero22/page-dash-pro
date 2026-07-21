@@ -168,11 +168,11 @@ img{
 
 /*************** Seccion principal (Hero) ***************/
 .hero {
-    background-color: var(--primary-color);
+    background-color: #105656;
     color: white;
     padding: 12rem 0;
     text-align: center;
-    height: 60vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -364,14 +364,63 @@ footer a:hover {
         url("../img/portadaCatalogo.jpeg")
             center center/cover no-repeat;
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* Evitar background-attachment: fixed en móviles por rendimiento */
+    background-attachment: scroll;
     padding: 6rem 0;
     color: white;
     text-align: center;
-    height: 90vh;
+    height: 90vh; /* altura por defecto en desktop */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Ajustes responsive para que la imagen se vea bien en móviles */
+@media screen and (max-width: 992px) {
+    .page-header {
+        height: 65vh;
+        padding: 5rem 0;
+        background-position: center 30%;
+        background-size: cover;
+    }
+
+    .hero {
+        height: 55vh;
+        padding: 8rem 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-header {
+        height: 40vh;
+        padding: 1rem 0;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .hero {
+        height: 50vh;
+        padding: 4rem 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .page-header {
+        height: 20vh;
+        padding: 0.5rem 0;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .hero {
+        height: 45vh;
+        padding: 3rem 0;
+    }
 }
 
 .product-card {
@@ -502,23 +551,31 @@ footer {
 /*************** ESTILOS GENERALES ***************/
 @media screen and (max-width: 768px){
     h1{
-        font-size: 3rem;
-        text-shadow: 2px 2px 5px black;
+        font-size: 1.6rem;
+        text-shadow: 1px 1px 3px black;
     }
 
     h5{
-        font-size: 1.6rem;
+        font-size: 1.1rem;
         font-weight: 600;
     }
 
     p{
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         line-height: 1.4;
     }
 
     li{
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         line-height: 1.6;
+    }
+
+    .form-control, .form-select{
+        font-size: 1.2rem;
+    }
+
+    .btn{
+        font-size: 1.3rem;
     }
 
     .sticky-banner {
@@ -552,7 +609,7 @@ footer {
     .sticky-banner .btn {
         font-size: 1rem;
         padding: 0.25rem 0.75rem;
-        flex-shrink: 0; /* Evita que el botón se encoja */
+        flex-shrink: 0;
         color: var(--primary-color);
     }
 
@@ -561,7 +618,7 @@ footer {
     }
 
     .copy p{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .floating-contact {
@@ -572,6 +629,51 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+/* --- Media Query para móviles pequeños (máximo 480px) --- */
+@media screen and (max-width: 480px){
+    h1{
+        font-size: 1.3rem;
+        text-shadow: 1px 1px 2px black;
+    }
+
+    h5{
+        font-size: 0.95rem;
+        font-weight: 600;
+    }
+
+    p{
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    li{
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .btn{
+        font-size: 1.2rem;
+    }
+
+    .form-control, .form-select{
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 6rem 0;
+        height: 50vh;
+    }
+
+    section {
+        padding: 3rem 0;
     }
 }
 
