@@ -51,12 +51,12 @@ h1{
 }
 
 h5{
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 600;
 }
 
 p{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.4;
     text-align: justify;
 }
@@ -358,16 +358,16 @@ footer a:hover {
 .page-header {
     background:
         linear-gradient(
-            rgba(0, 96, 115, 0.308),
-            rgba(0, 96, 115, 0.521)
+            rgba(0, 96, 115, 0.178),
+            rgba(0, 96, 115, 0.247)
         ),
-        url("../img/portadaCatalogo1.png")
-             center center;
+        url("../img/portadaCatalogo.jpeg")
+            center center/cover no-repeat;
     background-size: cover;
     padding: 6rem 0;
     color: white;
     text-align: center;
-    height: 70vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

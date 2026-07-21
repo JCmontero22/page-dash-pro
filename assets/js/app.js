@@ -48,7 +48,7 @@ function conssultaProductosDestacados() {
             
             data.forEach(element => {
                 $("#productos-destacados").append(`
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up">
                         <div class="card product-card h-100">
                             <img src="${element.img_producto}" class="card-img-center"
                                 alt="Producto Multi-usos" />

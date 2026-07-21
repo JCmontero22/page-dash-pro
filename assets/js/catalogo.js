@@ -42,6 +42,24 @@ function init() {
         anadirAlCarrito(productoId, nombre, precio, cantidad, presentacion);
     });
 
+    $(document).on("click", ".btn-whatsapp", function (e) {
+        e.preventDefault();
+        const card = $(this).closest('.card-body');
+        const productoId = $(this).data("id");
+        const nombre = $(this).data("nombre");
+
+        const select = card.find('.presentation-select');
+        const presentacion = select.find(':selected').text();
+        const precio = select.find(':selected').data('precio');
+        const cantidad = 1;
+
+        let mensaje = `Hola! Quisiera pedir:\n- ${nombre} (${presentacion}) - Cantidad: ${cantidad}`;
+        if (precio) mensaje += `\nPrecio unitario: $${Number(precio).toLocaleString('es-CO')}`;
+
+        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+        window.open(urlWhatsApp, '_blank');
+    });
+
     $(document).on("click", ".open-detail-modal", function () {
         const productoId = Number($(this).data("id"));
 
@@ -107,7 +125,7 @@ function renderizarProductos(productosParaRenderizar) {
     productosParaRenderizar.forEach((producto) => {
 
         let presentationOptions = '';
-        let precioInicial = 'Precio no disponible';
+        let precioInicial = 'Cotiza el precio';
 
         if (producto.presentaciones.length > 0) {
             producto.presentaciones.forEach((p, index) => {
@@ -118,7 +136,8 @@ function renderizarProductos(productosParaRenderizar) {
                         ${p.tamanio}
                     </option>
                 `;
-                if (index === 0) {
+                // Mostrar precio solo si viene definido y no es la cadena "null" ni vacío.
+                if (p.precio !== null && p.precio !== 'null' && p.precio !== '') {
                     precioInicial = '$' + Number(p.precio).toLocaleString('es-CO');
                 }
             });
@@ -144,6 +163,23 @@ function renderizarProductos(productosParaRenderizar) {
                     </p>
 
                     <div class="mt-auto d-flex justify-content-center align-items-center">
+                        <button
+                            class="btn btn-sm btn-success btn-whatsapp d-flex align-items-center"
+                            data-id="${producto.producto_id}"
+                            data-nombre="${producto.nombre_producto}">
+                            <!-- WhatsApp SVG -->
+                            <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i> WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        listaDeProductos.append(productoHtml);
+
+        /* Btn para añadir  cantidades al carrito*/
+        /* <div class="mt-auto d-flex justify-content-center align-items-center">
                         <input type="number" class="form-control quantity-input me-2" value="1" min="1" id="quantity-${producto.producto_id}" style="width: 80px;">
                         <button 
                             class="btn btn-sm btn-primary add-to-cart-btn"
@@ -154,13 +190,7 @@ function renderizarProductos(productosParaRenderizar) {
                             Añadir
                         </button>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        `;
-
-        listaDeProductos.append(productoHtml);
+                    </div> */
     });
 }
 
