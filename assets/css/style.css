@@ -395,11 +395,10 @@ footer a:hover {
 
 @media screen and (max-width: 768px) {
     .page-header {
-        height: 40vh;
-        padding: 1rem 0;
+        height: 65vh;
+        padding: 2rem 0;
         background-position: center center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .hero {
@@ -410,11 +409,10 @@ footer a:hover {
 
 @media screen and (max-width: 576px) {
     .page-header {
-        height: 20vh;
-        padding: 0.5rem 0;
+        height: 30vh;
+        padding: 1rem 0;
         background-position: center center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .hero {
